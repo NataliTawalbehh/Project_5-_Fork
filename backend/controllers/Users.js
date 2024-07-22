@@ -2,7 +2,7 @@ const pool = require("../models/db");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const saltRounds = parseInt(process.env.SALT);
-
+//===================================================================REGISTER============================================
 const register = async (req, res) => {
   const { first_name, last_name, username, phone_number, email, password, images } =
     req.body;
@@ -59,7 +59,7 @@ const register = async (req, res) => {
     });
 };
 
-
+//====================================================================LOGIN======================================================
 const login = (req, res) => {
   const password = req.body.password;
   const email = req.body.email;
@@ -113,7 +113,9 @@ const login = (req, res) => {
     });
 };
 
+//================================================================UPDATE USER BY ID====================================================
 const updateUserById = (req, res) => {
+
   const user_id = req.params.user_id;
   const { first_name, last_name, username, phone_number, email, password, images } =
     req.body;
@@ -140,6 +142,7 @@ const updateUserById = (req, res) => {
     });
 };
 
+//===============================================================DELETE USER BY ID======================================================
 const deleteUserById = (req, res) => {
   const user_id = req.params.user_id;
   pool.query(`DELETE FROM users WHERE user_id = $1 RETURNING *`, [user_id])
@@ -162,6 +165,7 @@ const deleteUserById = (req, res) => {
       });
     });
 };
+
 
 module.exports = {
   register,
