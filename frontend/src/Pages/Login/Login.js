@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import axios from "axios";
 import {jwtDecode} from "jwt-decode";
 import { setLogin, setUserId,setUserInfo } from "../../redux/reducers/Auth/Auth";
-
+import "../Login/Login.css"
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -59,6 +59,7 @@ const Login = () => {
   
 
   return (
+    <div className="body">
     <div className="Form">
       <p className="Title">Login:</p>
       <form onSubmit={login}>
@@ -78,6 +79,7 @@ const Login = () => {
         </div>
       </form>
       {message && <div className="ErrorMessage">{message}</div>}
+    </div>
     </div>
   );
 };
