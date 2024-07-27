@@ -165,6 +165,7 @@ const loginShop = (req, res) => {
               roleId: result.rows[0].role_id,
               shopName: result.rows[0].name,
               roleName: result.rows[0].role_name,
+  
             };
             const options = { expiresIn: "1d" };
             const secret = process.env.SECRET;
@@ -221,11 +222,33 @@ pool.query(query,[id])
 });
 }
 
+const getShopsByCategoryId =(req,res)=> {
+  const {id} = req.params;
+  const query = 'SELECT * FROM shops WHERE is_deleted=0 AND category_id = $1 ';
+  pool
+  .query(query , [id])
+  .then((result)=>{
+    res.status(200).json({
+      success:true,
+      message:`shope in category ${id}`,
+      shops:result.rows,
+    })
+  })
+  .catch((error)=>{
+    res.status(500).json({
+      success:false,
+      message:"server error",
+      error:error.message
+    })
+  })
+}
+
 module.exports = {
   createShops,
   deleteShopsById,
   getAllShops,
   updateShopById,
   loginShop,
-  getShopById
+  getShopById,
+  getShopsByCategoryId
 };

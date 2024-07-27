@@ -91,7 +91,7 @@ const register = async (req, res) => {
 const login = (req, res) => {
   const password = req.body.password;
   const email = req.body.email;
-  const query = ` SELECT users.*, roles.role_name
+  const query = ` SELECT users.*, roles.role_name 
     FROM users 
     JOIN roles ON users.role_id = roles.role_id 
     WHERE users.email = $1 `;
@@ -108,6 +108,7 @@ const login = (req, res) => {
               username: result.rows[0].username,
               role: result.rows[0].role_id,
               role_name: result.rows[0].role_name,
+
             };
             const options = { expiresIn: "1d" };
             const secret = process.env.SECRET;
