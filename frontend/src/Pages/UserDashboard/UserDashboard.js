@@ -14,6 +14,7 @@ import {
 import "../UserDashboard/UserDashboard.css";
 import { addProductFromCart } from "../../redux/reducers/Carts/Carts";
 
+
 const UserDashboard = () => {
   const dispatch = useDispatch();
   const categories = useSelector((state) => state.category.categories);

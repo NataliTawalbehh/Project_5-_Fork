@@ -23,7 +23,7 @@ const ProtectedRoute = ({ element, role }) => {
   console.log(roleId);
   console.log(isLoggedIn);
 
-
+  
   
 
   return element;
