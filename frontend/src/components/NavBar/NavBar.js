@@ -26,11 +26,6 @@ const NavBar = () => {
           {imageUrl && <img src={imageUrl} alt="User" className="user-image" />}
           {username && <span className="user-name">Welcome {username} !!</span>}
         </div>
-        <div className="cart-icon">
-          {/* <NavLink to="/cart">
-            <FontAwesomeIcon icon={faShoppingCart} />
-          </NavLink> */}
-        </div>
         <nav>
           {isLoggedIn ? (
             parseInt(roleId) === 3 ? (

@@ -156,6 +156,7 @@ const OwnerRegister = () => {
             >
               <option value="" disabled>Select a category</option>
               {categories.map((category) => (
+                console.log(category),
                 <option
                   key={category.category_id}
                   value={category.category_id}
