@@ -120,6 +120,7 @@ const Carts = () => {
     )
     console.log("Order result : ",result);
     dispatch(addOrders(result.data.order));
+    navigate("/orders")
     } catch (error) {
       console.log("Error creating an order : ",error);
     }
@@ -139,24 +140,36 @@ const Carts = () => {
     return total.toFixed(2)
   };
   
-  const handlePaymentCashSuccess = (data) => {
-    console.log('Payment cash successful:', data);
-    createOrder("CashOnDelivery");
-    navigate("/orders")
-    
+  const handlePaymentCashSuccess = async(data) => {
+    try{
+      console.log('Payment cash successful:', data);
+      createOrder("CashOnDelivery");
+      navigate("/orders")
+    }catch(error){
+      console.log("error handling payment cash success:",error);
+    }
   };
+
+  const calculateTotalPrice = (price ,quantity)=>{
+     return (price * quantity).toFixed(2);
+  }
   
   const totalPrices = cart.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(2);
 
   return (
+    <div className="Cartss">
     <div className="Cart">
-      <h2>Shopping Cart</h2>
+      <h2 className="h2">Shopping Cart</h2>
       {cart?.length > 0 ? (
-        <ul>
+        <ul className="ul">
           {cart.map((item) => (
-            <li key={item.product_id}>
+            <li className="li" key={item.product_id}>
               <img src={item.images} alt={item.name} className="cart-item-image" />
-              <p>{item.name} - {item.quantity} x ${item.price}</p>
+              <p className="p">{item.name}  
+                <br/>
+                <br/>
+                price: {calculateTotalPrice(item.quantity ,item.price)}
+               </p>
               <div className="icon-container">
                 <FontAwesomeIcon
                   icon={faPlus}
@@ -178,9 +191,9 @@ const Carts = () => {
           ))}
         </ul>
       ) : (
-        <p>No items in cart</p>
+        <p className="p">No items in cart</p>
       )}
-      <p>totalPrice:{totalPrices}</p>
+      <h2 className="p">totalPrice:{totalPrices}</h2>
       <button className="clear-cart-button" onClick={deleteAllProductsFromCart}>
         Remove All Products
       </button>
@@ -196,6 +209,7 @@ const Carts = () => {
           />
         </PayPalScriptProvider>
       </div>
+    </div>
     </div>
   );
 };

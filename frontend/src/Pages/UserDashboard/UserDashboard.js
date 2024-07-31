@@ -14,17 +14,17 @@ import {
 import "../UserDashboard/UserDashboard.css";
 import { addProductFromCart } from "../../redux/reducers/Carts/Carts";
 import { SetCartId } from "../../redux/reducers/Carts/Carts";
+import LoginPrompt from "../LoginPrompt/LoginPrompt";
 const UserDashboard = () => {
   const dispatch = useDispatch();
   const categories = useSelector((state) => state.category.categories);
+  console.log(categories);
   const shops = useSelector((state) => state.shops.shops);
   const products = useSelector((state) => state.product.products);
   const reviews = useSelector((state) => state.reviews.reviews);
   const cartId = useSelector((state) => state.cart.cartId);
   const token = useSelector((state) => state.auth.token);
   const userId = useSelector((state) => state.auth.userId);
-  
-console.log(cartId);
   const [showCategories, setShowCategories] = useState(true);
   const [showShops, setShowShops] = useState(false);
   const [showProducts, setShowProducts] = useState(false);
@@ -40,6 +40,7 @@ console.log(cartId);
   const [from, setFrom] = useState(0);
   const productsPerPage = 5;
   const [shopDetails, setShopDetails] = useState({});
+  const [showLoginPrompt, setShowLoginPrompt] = useState(false);
 
   useEffect(() => {
     if (!cartId && token) {
@@ -73,6 +74,10 @@ console.log(cartId);
   }, [dispatch]);
 
   const addProductToCart = async (product) => {
+    if (!token) {
+      setShowLoginPrompt(true);
+      return;
+    }
     const quantity = quantities[product.product_id] || 1;
     try {
       const result = await axios.post(
@@ -130,6 +135,10 @@ console.log(cartId);
   };
 
   const handleAddReview = async (product_id) => {
+    if (!token) {
+      setShowLoginPrompt(true);
+      return;
+    }
     const newReview = newReviews[product_id];
     if (!newReview) return;
 
@@ -387,6 +396,7 @@ console.log(cartId);
                 <button onClick={() => addProductToCart(product)}>
                   Add to Cart
                 </button>
+                {showLoginPrompt && <LoginPrompt />}
                 <button onClick={() => fetchReviews(product.product_id)}>
                   Show Reviews
                 </button>
@@ -514,6 +524,7 @@ console.log(cartId);
                     <button onClick={() => handleAddReview(product.product_id)}>
                       Submit Review
                     </button>
+                    {showLoginPrompt && <LoginPrompt />}
                   </div>
                 </div>
               </li>
