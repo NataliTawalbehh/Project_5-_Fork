@@ -134,7 +134,7 @@ const ShopOwnerDashboard = () => {
                   <h3>{product.name}</h3>
                   <p>{product.description}</p>
                   <p>{product.price}</p>
-                  {product.images && <img src={product.images} alt={product.name}  />}
+                  {product.images && <img className='img' src={product.images} alt={product.name}  />}
                   <button className='btn-delete' onClick={() => deleteProductById(product.product_id)}>Delete</button>
                   <button className='btn-update' onClick={() => {
                     setSelectedProductId(product.product_id);

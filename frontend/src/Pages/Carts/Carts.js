@@ -168,7 +168,7 @@ const Carts = () => {
     <div className="Cart">
       <h2  className="h2">Shopping Cart</h2>
       {cart?.length > 0 ? (
-        <ul>
+        <ul className="ul">
           {cart.map((item) => (
             <li className="li" key={item.product_id}>
               <img src={item.images} alt={item.name} className="cart-item-image" />
