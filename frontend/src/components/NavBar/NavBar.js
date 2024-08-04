@@ -23,6 +23,8 @@ const NavBar = () => {
     navigate("/user-dashboard");
   };
   return (
+    <>
+    <div className="positin">
     <div className="NavBar">
       <div className="user-info">
         {imageUrl && <img src={imageUrl} alt="User" className="user-image" />}
@@ -59,7 +61,7 @@ const NavBar = () => {
               >
                 Shop Owner Settings
               </NavLink>
-              <NavLink to="/owner-login" onClick={handleLogout}>
+              <NavLink to="/login" onClick={handleLogout}>
                 Logout
               </NavLink>
             </>
@@ -70,6 +72,12 @@ const NavBar = () => {
                 className={({ isActive }) => (isActive ? "active" : "")}
               >
                 Driver Dashboard
+              </NavLink>
+              <NavLink
+                to="/Chat"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                Chat
               </NavLink>
               <NavLink to="/login" onClick={handleLogout}>
                 Logout
@@ -107,6 +115,12 @@ const NavBar = () => {
               >
                 User Settings
               </NavLink>
+              <NavLink
+                to="/Chat"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                Chat
+              </NavLink>
               <NavLink to="/login" onClick={handleLogout}>
                 Logout
               </NavLink>
@@ -120,6 +134,10 @@ const NavBar = () => {
         )}
       </nav>
     </div>
+    </div>
+  
+
+    </>
   );
 };
 
