@@ -426,6 +426,27 @@ const UserDashboard = () => {
     }, [showShops, filteredShops]);
     
     return (
+      <>
+      <div className="dashboard">
+      <header className="header">
+        <div className="hero">
+          <div className="hero-text">
+            <h1>Enjoy quick delivery
+              <br/> with  QuickServ ..
+              <br/>
+              All you have to do is
+              <br/> fill the basket.</h1>
+            {/* <p>
+              It is a long established fact that a reader will be distracted by the
+              readable content of a page when looking at its layout.
+            </p> */}
+          </div>
+          <div className="hero-image">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKDgE91KdQnSJLwgbcixbOAvDByz5QwxKKE9IslDTa7csOu-71JDny7PJCJq5mGd9g-1o&usqp=CAU" alt="Delivery" />
+          </div>
+        </div>
+      </header>
+    </div>
         <div className="UserDashboard">
               {showContactUsPopup && (
             <div className="contact-us-popup">
@@ -663,6 +684,8 @@ const UserDashboard = () => {
             )}
             
         </div>
+
+        </>
         
     );
     

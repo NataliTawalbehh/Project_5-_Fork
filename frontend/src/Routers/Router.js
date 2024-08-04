@@ -17,6 +17,7 @@ import ShopOwnerDashboard from "../Pages/ShopOwnerDashboard/ShopOwnerDashboard";
 import ShopOwnerSettings from "../Pages/ShopOwnerSettings/ShopOwnerSettings";  // Import the ShopOwnerSettings component
 import UserDashboard from "../Pages/UserDashboard/UserDashboard";
 import { useSelector } from "react-redux";
+import Chat from "../Pages/Chat/Chat";
 
 const ProtectedRoute = ({ element, requiredRole }) => {
   const { isLoggedIn, roleId } = useSelector((state) => state.auth);
@@ -86,6 +87,10 @@ export const router = createBrowserRouter([
       {
         path: "driver-dashboard",
         element: <ProtectedRoute element={<DriverDashboard />} requiredRole={2} />,
+      },
+      {
+        path: "Chat",
+        element: <ProtectedRoute element={<Chat/>} />,
       },
       { 
         path: "products", 

@@ -92,74 +92,86 @@ const Register = () => {
   };
 
   return (
-    <div className="bodyRegister">
-    <div className="Register">
-      <form onSubmit={createNewUser}>
-        <input
-          type="text"
-          placeholder="First Name"
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Last Name"
-          value={lastName}
-          onChange={(e) => setLastName(e.target.value)}
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Username"
-          value={userName}
-          onChange={(e) => setUserName(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Phone Number"
-          value={phoneNumber}
-          onChange={(e) => setPhoneNumber(e.target.value)}
-        />
-        <div className="file-input-container">
-          <label htmlFor="image">Upload an Image:</label>
-          <input type="file" id="image" name="image" accept="image/*" onChange={handleFileChange} />
-        </div>
-        <div>
-          <label>
-            <input
-              type="checkbox"
-              checked={roleId === 2}
-              onChange={(e) => setRoleId(e.target.checked ? 2 : 1)}
-            />
-            Register as Driver
-          </label>
-        </div>
-        <button className="regButton" type="submit">Register</button>
-        <div className="login-link">
-          <p>Already have an account? <a href="/login">Login here</a></p>
-        </div>
-        <div className="owner_register-link">
-          <p>Register as an owner? <a href="/owner-register">Register here</a></p>
-        </div>
-      </form>
-      {status ? (
-        <div className="SuccessMessage">{message}</div>
-      ) : (
-        message && <div className="ErrorMessage">{message}</div>
-      )}
+    <div className="body">
+    <div className="form-container">
+      <div className="image-container">
+        <img src="https://png.pngtree.com/png-vector/20230429/ourlarge/pngtree-free-vector-login-concept-illustration-png-image_6743219.png" alt="Register Illustration" />
+      </div>
+      <div className="form-content">
+        <p className="title">Create an Account</p>
+        <form onSubmit={createNewUser}>
+          <input
+            className="inputs"
+            type="text"
+            placeholder="First Name"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+          />
+          <input
+            className="inputs"
+            type="text"
+            placeholder="Last Name"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+          />
+          <input
+            className="inputs"
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            className="inputs"
+            type="text"
+            placeholder="Username"
+            value={userName}
+            onChange={(e) => setUserName(e.target.value)}
+          />
+          <input
+            className="inputs"
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <input
+            className="inputs"
+            type="text"
+            placeholder="Phone Number"
+            value={phoneNumber}
+            onChange={(e) => setPhoneNumber(e.target.value)}
+          />
+          <div className="file-input-container">
+            <label htmlFor="image">Upload an Image:</label>
+            <input type="file" id="image" name="image" accept="image/*" onChange={handleFileChange} />
+          </div>
+          <div>
+            <label>
+              <input
+                type="checkbox"
+                checked={roleId === 2}
+                onChange={(e) => setRoleId(e.target.checked ? 2 : 1)}
+              />
+              Register as Driver
+            </label>
+          </div>
+          <button className="button" type="submit">Register</button>
+          <div className="register-link">
+            <p>Already have an account? <a href="/login">Login here</a></p>
+          </div>
+          <div className="register-link">
+            <p>Register as an owner? <a href="/owner-register">Register here</a></p>
+          </div>
+        </form>
+        {status ? (
+          <div className="success-message">{message}</div>
+        ) : (
+          message && <div className="error-message">{message}</div>
+        )}
+      </div>
     </div>
-    </div>
+  </div>
   );
 };
 

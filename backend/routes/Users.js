@@ -7,7 +7,8 @@ const {
   deleteUserById,
   getAllUsers,
   getUserById,
-  googleLogin
+  googleLogin,
+  getAllDrivers
 } = require("../controllers/Users");
 
 const usersRouter = express.Router();
@@ -19,5 +20,5 @@ usersRouter.delete("/:user_id", deleteUserById);
 usersRouter.get("/", getAllUsers);
 usersRouter.get("/:id", getUserById);
 usersRouter.post('/google-login', googleLogin);
-
+usersRouter.get('/user_driver/drivers', getAllDrivers)
 module.exports = usersRouter;
