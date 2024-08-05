@@ -1,3 +1,65 @@
+.header {
+  /* background: #fbe9e7; */
+  background: linear-gradient(to right,#78a6d3, #fbc02d, #fffde7 ,#fafafa,#fafafa);
+  padding: 20px 0;
+  text-align: center;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 30px 20px;
+  text-align: left;
+}
+
+.hero-text {
+  max-width: 50%;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin: 0 0 20px;
+  color: #333;
+}
+
+.hero p {
+  font-size: 18px;
+  margin: 0 0 40px;
+  color: #403f3f;
+}
+
+
+.hero-image img {
+  max-width: 100%;
+  height: 450px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+
+
+  .hero-image {
+    margin-top: 20px;
+  }
+}
+
 .Category {
     margin: 20px;
     padding: 10px;
@@ -52,32 +114,102 @@
     border-radius: 5px;
     margin-top: 10px;
   }
-  .best-rated-shop-list {
-    list-style-type: none;
+  body {
+    margin: 0;
     padding: 0;
-    margin-top: 20px;
+    font-family: Arial, sans-serif;
   }
   
-  .best-rated-shop-list li {
-    margin: 10px 0;
-    padding: 10px;
-    border: 1px solid #ddd;
+  /* Footer Styles */
+  .footer {
+    background-color: #78a6d3;
+    color: #fff;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 90%;
+  }
+  
+  .footer-info {
+    flex: 1;
+    padding: 1rem;
+    background-color:  #78a6d3;
+    color: #0c0c0c;
+    text-align: left;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .footer-info h2 {
+    margin: 0.5rem 0;
+    margin-left: 210px;
+    
+  }
+  
+  .footer-info p {
+    margin: 0.5rem 0;
+  }
+  p{
+    color: #0a0a0a;
+  }
+  .footer-info .social-media {
+    margin-top: 1rem;
+  }
+  
+  .footer-info .social-media a {
+    /* margin-right: 1rem; */
+    color:#0f0f0f;
+    text-decoration: none;
+    margin-left: 95px;
+    font-size: medium;
+  }
+  
+  .footer-info .social-media a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-map {
+    flex: 1;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .footer-map img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    margin-left: 40px;
+  }
+  
+  .scroll-to-top {
+    background-color: #f3dc77;
+    color: #090909;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    margin-top: 10px;
   }
   
-  .best-rated-shop-list li:hover {
-    background-color: #f0f0f0;
+  .scroll-to-top:hover {
+    background-color: #e1c95e;
   }
   
-  .best-rated-shop-list h3 {
-    margin: 0;
-    font-size: 18px;
-  }
-  
-  .best-rated-shop-list p {
-    margin: 5px 0 0;
-    font-size: 14px;
-    color: #555;
+  .scroll-to-top:active {
+    background-color: #d1b54c;
   }

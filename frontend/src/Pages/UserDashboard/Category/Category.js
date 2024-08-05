@@ -40,6 +40,23 @@ const Category = () => {
   };
 
   return (
+    <>
+    <div className="dashboard">
+    <header className="header">
+      <div className="hero">
+        <div className="hero-text">
+          <h1>Enjoy quick delivery
+            <br/> with QuickServ ..
+            <br/>
+            All you have to do is
+            <br/> fill the basket.</h1>
+        </div>
+        <div className="hero-image">
+          <img src="https://i.pinimg.com/564x/61/ab/a3/61aba3c42a0f00ffb2f36551bcb28efc.jpg" alt="Delivery" />
+        </div>
+      </div>
+    </header>
+  </div>
     <div className="Category">
       <h2>Categories</h2>
       <ul className="category-list">
@@ -52,6 +69,26 @@ const Category = () => {
       </ul>
       <BestRatedShops />
     </div>
+    <footer className="footer">
+    <div className="footer-content">
+      <div className="footer-info">
+        <h2>Contact Info</h2>
+        <p>Address: CT34 Building, Street 195, Amman Jordan, Country</p>
+        <p>Telephone: 071234 5678</p>
+        <p>Fax: 9876 5432</p>
+        <p>Email: admin@pj.com</p>
+        <div className="social-media">
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </div>
+      </div>
+      <div className="footer-map">
+        <img src="https://i.pinimg.com/564x/0a/12/13/0a12131d595ca1ac8625fc43a5a87443.jpg" alt="Map" />
+      </div>
+    </div>
+  </footer>
+    </>
   );
 };
 
