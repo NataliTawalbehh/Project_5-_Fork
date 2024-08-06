@@ -45,7 +45,7 @@ const BestRatedShops = () => {
 
   return (
     <div className="BestRatedShops">
-      <h2>Best Rated Shops</h2>
+      <h2 className="best">Best Rated Shops</h2>
       <ul className="best-rated-shop-list">
         {bestRatedShops.map((shop) => (
           <li

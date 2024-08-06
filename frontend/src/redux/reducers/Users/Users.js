@@ -4,11 +4,15 @@ export const userSlice = createSlice({
   name: "users",
   initialState: {
     users: [],
+    drivers:[],
   },
 
   reducers: {
     setUsers: (state, action) => {
       state.users = action.payload;
+    },
+    setDrivers: (state, action) => {
+      state.drivers = action.payload;
     },
     addUsers: (state, action) => {
       state.users.push(action.payload);
@@ -29,6 +33,6 @@ export const userSlice = createSlice({
     },
   },
 });
-export const { setUsers, addUsers, updateUserById, deleteUserById } =
+export const { setDrivers ,setUsers, addUsers, updateUserById, deleteUserById } =
   userSlice.actions;
 export default userSlice.reducer;

@@ -19,6 +19,8 @@ import { useSelector } from "react-redux";
 import Shops from "../Pages/UserDashboard/Shops/Shops";
 import ProductsShops from "../Pages/UserDashboard/Products/ProductsShops";
 import Category from "../Pages/UserDashboard/Category/Category";
+import ChatDriver from "../Pages/Chat/ChatDriver";
+import ChatUser from "../Pages/Chat/ChatUser";
 
 const ProtectedRoute = ({ element, requiredRole }) => {
   const { isLoggedIn, roleId } = useSelector((state) => state.auth);
@@ -93,6 +95,14 @@ export const router = createBrowserRouter([
       {
         path: "driver-dashboard",
         element: <ProtectedRoute element={<DriverDashboard />} requiredRole={2} />,
+      },
+      {
+        path: "ChatDriver",
+        element: <ProtectedRoute element={<ChatDriver/>} />,
+      }, 
+      {
+        path: "ChatUser",
+        element: <ProtectedRoute element={<ChatUser/>} />,
       },
       { 
         path: "products", 

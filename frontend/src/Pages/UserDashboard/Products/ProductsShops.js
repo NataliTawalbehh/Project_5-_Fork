@@ -200,7 +200,7 @@ console.log(userId);
         </>
       ) : (
         <>
-        <div>
+        <div className='rating-section'>
             <h3>Rate this Shop</h3>
             <Rating
               count={5}

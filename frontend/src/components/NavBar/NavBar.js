@@ -23,11 +23,16 @@ const NavBar = () => {
     navigate("/user-dashboard");
   };
   return (
+    <>
+    <div className="positin">
     <div className="NavBar">
       <div className="user-info">
         {imageUrl && <img src={imageUrl} alt="User" className="user-image" />}
         {username && <span className="user-name">Welcome {username} !!</span>}
-      </div>
+      
+              <img src='./assets\Untitled-19.png' alt="Logo" className="logo-img" />
+              </div>
+     
       <div className="cart-icon">
         {/* <NavLink to="/cart">
             <FontAwesomeIcon icon={faShoppingCart} />
@@ -41,6 +46,7 @@ const NavBar = () => {
               {shopImage && <img src={shopImage} alt="User" className="user-image" />}
               {shopName && <span className="user-name">Welcome {shopName} !!</span>}
               </div>
+             
               <NavLink
                 to="/shop-owner-dashboard"
                 className={({ isActive }) => (isActive ? "active" : "")}
@@ -59,7 +65,7 @@ const NavBar = () => {
               >
                 Shop Owner Settings
               </NavLink>
-              <NavLink to="/owner-login" onClick={handleLogout}>
+              <NavLink to="/login" onClick={handleLogout}>
                 Logout
               </NavLink>
             </>
@@ -70,6 +76,12 @@ const NavBar = () => {
                 className={({ isActive }) => (isActive ? "active" : "")}
               >
                 Driver Dashboard
+              </NavLink>
+              <NavLink
+                to="/ChatDriver"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                Chat
               </NavLink>
               <NavLink to="/login" onClick={handleLogout}>
                 Logout
@@ -96,10 +108,22 @@ const NavBar = () => {
                 Cart
               </NavLink>
               <NavLink
+                to="/reviews"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                Reviews
+              </NavLink>
+              <NavLink
                 to="/user-settings"
                 className={({ isActive }) => (isActive ? "active" : "")}
               >
                 User Settings
+              </NavLink>
+              <NavLink
+                to="/ChatUser"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                Chat
               </NavLink>
               <NavLink to="/login" onClick={handleLogout}>
                 Logout
@@ -114,6 +138,10 @@ const NavBar = () => {
         )}
       </nav>
     </div>
+    </div>
+  
+
+    </>
   );
 };
 

@@ -1,75 +1,119 @@
 .Orders {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem;
-    max-width: 800px;
-    margin: 0 auto;
-    font-family: Arial, sans-serif;
-  }
-  
-  .Orders > div {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1rem;
-    background-color: #f9f9f9;
-  }
-  
-  .Orders h3 {
-    margin: 0 0 0.5rem 0;
-    font-size: 1.2rem;
-    color: #333;
-  }
-  
-  .Orders p {
-    margin: 0.5rem 0;
-    color: #555;
-  }
-  
-  .Orders ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .Orders li {
-    border-top: 1px solid #ddd;
-    padding: 0.5rem 0;
-  }
-  
-  .Orders li:first-child {
-    border-top: none;
-  }
-  
-  .Orders h4 {
-    margin: 0.5rem 0;
-    font-size: 1.1rem;
-    color: #666;
-  }
-  
-  .Orders button {
-    margin: 0.5rem 0.5rem 0 0;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .Orders button:hover {
-    background-color: #ddd;
-  }
-  
-  .Orders button:active {
-    background-color: #ccc;
-  }
-  
-  .Orders button:first-child {
-    background-color: #4CAF50;
-    color: white;
-  }
-  
-  .Orders button:last-child {
-    background-color: #f44336;
-    color: white;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 900px;
+  margin: 120px auto 0; /* زيادة المسافة العلوية للتناسب مع NavBar الثابت */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.Orders > div {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.Orders .payment-method, .Orders .from, .Orders .order-id, .Orders .status {
+  margin: 0.5rem 0;
+  color: #555;
+  border-bottom: 1px solid #ddd; /* خط فاصل خفيف بين الأقسام */
+  padding-bottom: 0.5rem; /* مسافة بين النص والخط الفاصل */
+}
+
+.Orders .payment-method:last-of-type, .Orders .from:last-of-type, .Orders .order-id:last-of-type, .Orders .status:last-of-type {
+  border-bottom: none; /* إزالة الخط الفاصل الأخير */
+}
+
+.Orders .label {
+  font-weight: bold;
+}
+
+.Orders .products {
+  border-bottom: 1px solid #ddd; /* خط فاصل خفيف قبل قائمة المنتجات */
+  padding-bottom: 0.5rem; /* مسافة بين النص والخط الفاصل */
+  text-align: center; /* مركزية كلمة "Products" */
+}
+
+.Orders .products h4 {
+  margin: 0;
+  color: #333;
+}
+
+.Orders ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.Orders li {
+  padding: 0.75rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-bottom: 1px solid #ddd; /* خط فاصل بين كل عنصر قائمة وآخر */
+}
+
+.Orders li:last-child {
+  border-bottom: none; /* إزالة الخط الفاصل الأخير */
+}
+
+.Orders button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  align-self: center; /* لضبط الأزرار في المنتصف */
+}
+
+.Orders button:hover {
+  background-color: #ddd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.Orders button:active {
+  background-color: #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.Orders button:first-child {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.Orders button:last-child {
+  background-color:#78a6d3;
+  color: white;
+}
+
+.Orders .product-info {
+  margin: 0.5rem 0;
+  color: #555;
+}
+
+.Orders .product-label {
+  font-weight: bold;
+  color: #333; /* لون النص للفئة label */
+}
+
+.Orders .product-info span.product-label {
+  color: #fbc02d; /* لون خاص لكلمة "Name" و "Description" */
+}
+
+.Orders .status {
+  margin: 0.5rem 0;
+  color: #555;
+}
+
+.Orders .status-label {
+  font-weight: bold;
+  color: #2196F3; /* لون خاص لكلمة "Status" */
+}
   
